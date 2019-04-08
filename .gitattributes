@@ -1,0 +1,4 @@
+* text=auto
+MVC_CensusPrediction/CensusPredictionMVC/Scripts/* linguist-vendored
+*.css linguist-language=csharp
+*.js linguist-language=csharp
