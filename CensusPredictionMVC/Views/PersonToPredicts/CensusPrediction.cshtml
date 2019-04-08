@@ -1,0 +1,202 @@
+﻿@model CensusPredictionMVC.Models.PersonToPredictModel
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+
+    List<SelectListItem> EduList = CensusPredictionMVC.ConverterModels.ConverterToItemList.EduListDownload();
+    List<SelectListItem> CountryList = CensusPredictionMVC.ConverterModels.ConverterToItemList.StatesListDownload();
+    List<SelectListItem> MartialStatusList = CensusPredictionMVC.ConverterModels.ConverterToItemList.martialStatusesDownload();
+    List<SelectListItem> ModelPrediList = CensusPredictionMVC.ConverterModels.ConverterToItemList.modelPredictsDownload();
+    List<SelectListItem> OccuList = CensusPredictionMVC.ConverterModels.ConverterToItemList.occupationTypesDownload();
+    List<SelectListItem> RacList = CensusPredictionMVC.ConverterModels.ConverterToItemList.racesDownload();
+    List<SelectListItem> RelationshipList = CensusPredictionMVC.ConverterModels.ConverterToItemList.relationshipTypesDownload();
+    List<SelectListItem> SexTypeList = CensusPredictionMVC.ConverterModels.ConverterToItemList.sexTypesTypesDownload();
+    List<SelectListItem> WorkClassTypeList = CensusPredictionMVC.ConverterModels.ConverterToItemList.workClassTypesDownload();
+}
+
+
+
+@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+@using (Html.BeginForm())
+{@Html.AntiForgeryToken()
+<div class="container">
+    <div class="modal-body row">
+        <div class="col-md-5">
+
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.modelName, "Model to Predict", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.modelName, ModelPrediList, new { htmlAttributes = new { @class = "form-control" } })
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.educationNo, "Years of Education", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.EditorFor(model => model.educationNo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.educationNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Age, "Age", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Capitalgain, "Capital Gain", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.EditorFor(model => model.Capitalgain, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Capitalgain, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.hourPerweek, "Worked hours per Week", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.EditorFor(model => model.hourPerweek, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.hourPerweek, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idworkclass, "Workclass Type", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idworkclass, WorkClassTypeList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ifWoman, "Sex", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idrelationship, SexTypeList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idrelationship, "Relationship type", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idrelationship, RelationshipList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idrace, "Race", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idrace, RacList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idOccupation, "Occupation Type", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idOccupation, OccuList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idMartialStatus, "Martial Status", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idMartialStatus, MartialStatusList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ideducation, "Education Type", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.ideducation, EduList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.idcountry, "Country", htmlAttributes: new { @class = "control-label col-md-5" })
+                    <div class="col-md-auto">
+                        @Html.DropDownListFor(model => model.idcountry, CountryList, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-7">
+            <button name="Apply" value="Predict" type="submit" class="btn btn-primary btn-lg" style="width:80%;" onclick="MakePrediction()"> Make prediction</button>
+            <div class="card text-white bg-primary mb-3" style="width: 80%; margin-top:10px">
+                <div class="card-header">Results</div>
+                <div class="card-body">
+                    <p>Propability above 50 000$:@Html.DisplayFor(model => model.Above50kProp, "", new { htmlAttributes = new { @class = "card-text" } }) </p>
+
+                    <p>Propability below 50 000$:  @Html.DisplayFor(model => model.Below50kProp, "", new { htmlAttributes = new { @class = "card-text" } })</p>
+
+                </div>
+
+            </div>
+
+            <div id="show-id" class="spinner-border" style="width: 3.5rem; height: 3.5rem; display:none " role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div id="chartContainer" style="height:370px; width:80%; @(Model.Above50kProp != 0 ? "display:block;":"display:none;")"></div>
+        </div>
+    </div>
+</div>
+
+}
+
+
+@section scripts{
+
+    <script type="text/javascript">
+    function MakePrediction() {
+        document.getElementById("show-id").style.display = "block";
+    }
+
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            theme: "light1",
+            title: {
+                text: "Probability of income"
+            },
+            axisY: {
+                title: "Percents %",
+                gridThickness: 0,
+                tickLength: 0,
+                lineThickness: 0,
+                labelFormatter: function () {
+                    return " ";
+                }
+            },
+            data: [{
+                type: "column",
+                dataPoints: [
+                    { y: @Model.Below50kProp, label: "Below50k" },
+                    { y: @Model.Above50kProp, label: "Above50k" }
+                ]
+            }]
+
+
+        });
+        chart.render()
+    }
+
+    </script>
+}

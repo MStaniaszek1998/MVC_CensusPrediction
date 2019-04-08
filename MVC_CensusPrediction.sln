@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CensusPredictionMVC", "CensusPredictionMVC\CensusPredictionMVC.csproj", "{FAC9A61F-EB01-4AAC-8E38-243D1D0CAF57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CensusPredictionBusinessLogic", "CensusPredictionBusinessLogic\CensusPredictionBusinessLogic.csproj", "{888D118C-0BF2-4855-99AE-25FBC7444E2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{38275528-445A-4C8A-B177-7BEB1E3E109B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAC9A61F-EB01-4AAC-8E38-243D1D0CAF57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC9A61F-EB01-4AAC-8E38-243D1D0CAF57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC9A61F-EB01-4AAC-8E38-243D1D0CAF57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC9A61F-EB01-4AAC-8E38-243D1D0CAF57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888D118C-0BF2-4855-99AE-25FBC7444E2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888D118C-0BF2-4855-99AE-25FBC7444E2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888D118C-0BF2-4855-99AE-25FBC7444E2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888D118C-0BF2-4855-99AE-25FBC7444E2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5568A854-5864-4C03-899F-0E51CD727856}
+	EndGlobalSection
+EndGlobal
